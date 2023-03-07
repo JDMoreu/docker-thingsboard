@@ -22,11 +22,23 @@ mkdir -p ~/.mytb-logs && sudo chown -R 799:799 ~/.mytb-logs
 
 ## Run docker-compose 
 
+- Mount the config of docker-compose.yml
+
 ```azurecli-interactive
 docker-compose pull
-docker-compose up -d
-docker-compose logs -f mytb
 ``` 
+
+- Upload container
+
+```azurecli-interactive
+docker-compose up -d
+```
+- Listening mode
+
+```azurecli-interactive
+docker-compose logs -f mytb
+```
+
 ## Open ports
 
 - Opening the ports depends on the distribution you are using or if you are using a VPS or cloud server.
