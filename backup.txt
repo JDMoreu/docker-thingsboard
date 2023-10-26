@@ -1,6 +1,7 @@
-docker run --rm --volumes-from docker-compose_mytb_1 -v $(pwd):/backup ubuntu tar czf /backup/mytb-backup.tar.gz /data /var/log/thingsboard
+docker run --rm --volumes-from "name_container" -v $(pwd):/backup ubuntu tar czf /backup/mytb-backup.tar.gz /data /var/log/thingsboard
 Enviar al otro servidor
 montar el thingsboard v 3.4.4
-docker run --rm --volumes-from docker-compose_mytb_1 -v $(pwd):/backup ubuntu tar xzf /backup/mytb-backup.tar.gz
+docker run --rm --volumes-from "name_container" -v $(pwd):/backup ubuntu tar xzf /backup/mytb-backup.tar.gz
 reiniciar el contenedor
+docker restart docker-compose_mytb_1
 listo
